@@ -10,6 +10,7 @@ class JuniorController extends Controller
 {
     public function aumentarSalario(string $nome, float $salario, int $numeroInscricao, int $HorasTrabalhadas) {
         $Junior = new Funcionario($nome ,$salario ,$numeroInscricao );
+        $Junior->aumentarSalario($salario,$HorasTrabalhadas);
         return view('JuniorAumentado')
         ->with('Junior', $Junior)
         ->with('HorasTrabalhadas', $HorasTrabalhadas);
@@ -22,7 +23,7 @@ class JuniorController extends Controller
     }
     public function calcularImpostoAumentado(string $nome, float $salario, int $numeroInscricao) {
         $Junior = new Funcionario ($nome, $salario, $numeroInscricao);
-        $Junior->depositar($numeroInscricao);
+        $Junior->calcularImpostoAumentado($salario);
         return view('JuniorImpostoAumentado')
         ->with('Junior', $Junior);
      }

@@ -13,7 +13,7 @@ Route::get('/laravel', function () {
     return view('welcome');
 });
 
-Route::get('/junior/{nome}/{numeroInscricao}/{salario}/{HorasTrabalhadas}', [App\Http\Controllers\JuniorController::class, 'aumentarSalario'])
+Route::get('/junior/{nome}/{numeroInscricao}/{salario}/aumentarSalario/{HorasTrabalhadas?}', [App\Http\Controllers\JuniorController::class, 'aumentarSalario'])
     ->where('nome', '[A-Za-z]+')
     ->where('numeroInscricao', '[0-9]+')
     ->where('salario', '[0-9]+\.[0-9]+')
