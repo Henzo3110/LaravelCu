@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\models\Funcionario;
 
-class PlenoController extends FuncionarioController
+class PlenoController extends Controller
 {
     public function aumentarSalario(string $nome, float $salario, int $numeroInscricao, int $HorasTrabalhadas) {
         $Pleno = new Funcionario($nome ,$salario ,$numeroInscricao );

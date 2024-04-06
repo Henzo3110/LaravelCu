@@ -13,7 +13,7 @@ class Junior extends Funcionario
         return $this->HorasTrabalhadas;
     }
 
-    public function setHorasTrabalhadas($HorasTrabalhadas) {
+    public function setHorasTrabalhadas( int $HorasTrabalhadas) {
         $this->HorasTrabalhadas = $HorasTrabalhadas;
     }
 

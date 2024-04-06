@@ -19,7 +19,7 @@ abstract class Funcionario extends Model implements InterfaceFuncionario
         return $this->nome;
     }
 
-    public function setNome($nome) {
+    public function setNome(string $nome) {
         $this->nome = $nome;
     }
 
@@ -27,7 +27,7 @@ abstract class Funcionario extends Model implements InterfaceFuncionario
         return $this->salario;
     }
 
-    public function setSalario($salario) {
+    public function setSalario(float $salario) {
         $this->salario = $salario;
     }
 
@@ -35,7 +35,7 @@ abstract class Funcionario extends Model implements InterfaceFuncionario
         return $this->numeroInscricao;
     }
 
-    public function setNumeroInscricao($numeroInscricao)  {
+    public function setNumeroInscricao(int $numeroInscricao)  {
         $this->numeroInscricao = $numeroInscricao;
     }
 
