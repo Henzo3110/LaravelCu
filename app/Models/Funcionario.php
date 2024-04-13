@@ -14,7 +14,6 @@ abstract class Funcionario extends Model implements InterfaceFuncionario
     private $salario;
     private $numeroInscricao;
 
-
     public function getNome() : string {
         return $this->nome;
     }
@@ -23,7 +22,7 @@ abstract class Funcionario extends Model implements InterfaceFuncionario
         $this->nome = $nome;
     }
 
-    public function getSalerio() : float {
+    public function getSalario() : float {
         return $this->salario;
     }
 
@@ -38,34 +37,9 @@ abstract class Funcionario extends Model implements InterfaceFuncionario
     public function setNumeroInscricao(int $numeroInscricao)  {
         $this->numeroInscricao = $numeroInscricao;
     }
-
-    public function aumentarSalario($salario, $HorasTrabalhadas) : float {
-        $aumento = ($salario * 0.10);
-        $salarioAumentado = $salario + $aumento;
-        return "salario aumentado em: ". $salarioAumentado;
-    }
-
-    public function calcularImposto($salario) : float {
-        $ImpostoDeRenda = ($salario * 0.11);
-        $Inss = ($salario * 0.08);
-        $Sindicato = ($salario * 0.05);
-        $SomaDosImpostos = ($ImpostoDeRenda + $Inss + $Sindicato);
-        $SalarioComDesconto = ($salario - $SomaDosImpostos);
-        return "Seu salario com o desconto dos impostos está em". $SalarioComDesconto;
-    }
-    public function calcularImpostoAumentado($salarioAumentado) : float {
-        $ImpostoDeRenda = ($salarioAumentado * 0.11);
-        $Inss = ($salarioAumentado * 0.08);
-        $Sindicato = ($salarioAumentado * 0.05);
-        $SomaDosImpostos = ($ImpostoDeRenda + $Inss + $Sindicato);
-        $salarioAumentadoComDesconto = ($salarioAumentado - $SomaDosImpostos);
-        return "Seu Salari$salarioAumentado com o desconto dos impostos está em". $salarioAumentadoComDesconto;
-    }
-
-    public function __construct($nome, $salario,$numeroInscricao) {
-        $this->setNome($nome);
-        $this->setNalario($salario);
-        $this->setNumeroInscricao($numeroInscricao);
-
+    public function __construct($nome, $salario, $numeroInscricao){
+        $this->nome = $nome;
+        $this->salario = $salario;
+        $this->numeroInscricao = $numeroInscricao;
     }
 }
